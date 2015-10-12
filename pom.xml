@@ -11,6 +11,10 @@
 	<name>BDD testing of pippo demo with Cucumber and Serenity</name>
 
 	<properties>
+		<tomcat.hostname>tomcat</tomcat.hostname>
+		<webapp.deploy.context>pippo</webapp.deploy.context>
+		<war.file.location>pippo-demo.war</war.file.location>
+
 		<junit.version>4.11</junit.version>
 		<slf4j.version>1.7.7</slf4j.version>
 		<typesafe.config>1.3.0</typesafe.config>
@@ -86,6 +90,49 @@
 					<showDeprecation>true</showDeprecation>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.cargo</groupId>
+				<artifactId>cargo-maven2-plugin</artifactId>
+				<version>1.4.11</version>
+				<configuration>
+					<container>
+						<containerId>tomcat7x</containerId>
+						<type>remote</type>
+					</container>
+					<configuration>
+						<type>runtime</type>
+						<properties>
+							<cargo.hostname>${tomcat.hostname}</cargo.hostname>
+							<cargo.servlet.port>8080</cargo.servlet.port>
+							<cargo.remote.username>admin</cargo.remote.username>
+							<cargo.remote.password>admin</cargo.remote.password>
+						</properties>
+					</configuration>
+					<deployer>
+						<type>remote</type>
+					</deployer>
+					<deployables>
+						<deployable>
+							<type>war</type>
+							<location>${war.file.location}</location>
+							<properties>
+								<context>${webapp.deploy.context}</context>
+							</properties>
+						</deployable>
+					</deployables>
+				</configuration>
+				<executions>
+					<execution>
+						<id>war-deploy</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

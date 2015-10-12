@@ -1,0 +1,27 @@
+tomcat:
+  image: balamaci/tomcat7-jdk8
+  expose:
+    - 8080:8080
+  volumes:
+    - ./out/tomcat:/opt/tomcat/logs
+
+hub:
+  image: selenium/hub:2.48.1
+  expose:
+    - 4444:4444
+
+nodeff:
+  image: selenium/node-firefox:2.48.1
+  volumes:
+    - ./out/ff/e2e/uploads:/e2e/uploads
+  links:
+    - hub
+
+uitests:
+  image: balamaci/mvn3-jdk8
+  volumes:
+    - .:/usr/src/app
+    - ~/.m2:/root/.m2
+  links:
+    - tomcat
+    - hub
