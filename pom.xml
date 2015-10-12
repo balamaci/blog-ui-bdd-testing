@@ -65,6 +65,7 @@
 			<artifactId>serenity-core</artifactId>
 			<version>${serenity.core.version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
 			<artifactId>serenity-cucumber</artifactId>

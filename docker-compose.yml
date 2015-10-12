@@ -4,6 +4,8 @@ tomcat:
     - 8080:8080
   volumes:
     - ./out/tomcat:/opt/tomcat/logs
+  links:
+    - hub
 
 hub:
   image: selenium/hub:2.48.1
@@ -18,10 +20,11 @@ nodeff:
     - hub
 
 uitests:
-  image: balamaci/mvn3-jdk8
+  image: balamaci/ui-tests
   volumes:
     - .:/usr/src/app
     - ~/.m2:/root/.m2
   links:
     - tomcat
     - hub
+    - nodeff
