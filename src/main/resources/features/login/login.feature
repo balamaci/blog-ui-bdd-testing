@@ -4,5 +4,5 @@ Feature: Login
 
   Scenario: User is shown Login page
     When I open the application
-    And I try to access the Admin page
     Then I should see the Login page
+
