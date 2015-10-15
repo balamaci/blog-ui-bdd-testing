@@ -30,4 +30,11 @@ public class LoginSteps extends ScenarioSteps {
         assertThat(loginPage.getTitle()).startsWith("Login");
     }
 
+    @Step
+    public void failedLoginWarnMessageIsShown() {
+        assertThat(loginPage.getDriver().getPageSource()).contains("Authentication failed");
+    }
+
+
+
 }

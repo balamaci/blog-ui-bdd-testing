@@ -6,7 +6,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 /**
  * @author sbalamaci
  */
-@DefaultUrl("http://tomcat:8080/pippo/contacts")
+@DefaultUrl("http://localhost/contacts")
 public class ContactsPage extends PageObject {
 
 

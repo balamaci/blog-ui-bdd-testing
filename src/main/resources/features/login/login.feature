@@ -1,9 +1,8 @@
 @ui
 Feature: Login functionality
   Unauthorized users first need to login into the application
-
-  Users who enter right credentials should be able to login into the application.
-  Sometimes users ,
+  Users who enter right credentials should be able to login into the application
+  Users who enter wrong credentials are shown an error message
 
   Background:
     Given I try to access the 'Contacts' page
@@ -14,5 +13,5 @@ Feature: Login functionality
     Then I should see the 'Contacts' page
 
   Scenario: Entering invalid credentials I am warned that login has failed
-    When I enter user 'hacker' with password 'admin'
+    When I enter user 'hacker' with password ''
     Then The user should see a failed login warning message

@@ -13,12 +13,17 @@ public class LoginPage extends PageObject {
 
     public void login(String username, String password) {
         WebElement txtUsername = getDriver()
-                .findElement(By.id(Locators.getValue("login.username")));
+                .findElement(By.name(Locators.getValue("login.txtUsername.name")));
         WebElement txtPassword = getDriver()
-                .findElement(By.id(Locators.getValue("login.password")));
+                .findElement(By.name(Locators.getValue("login.txtPassword.name")));
 
         typeInto(txtUsername, username);
         typeInto(txtPassword, password);
+
+        WebElement btnSubmit = getDriver()
+                .findElement(By.name(Locators.getValue("btnSubmit.name")));
+
+        clickOn(btnSubmit);
     }
 
 }

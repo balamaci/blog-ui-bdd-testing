@@ -18,10 +18,6 @@ public class LoginFeature {
     @Steps
     private ContactsSteps contactsSteps;
 
-    @Given("^I try to access the 'Contacts' page$")
-    public void openContactsPage() throws Exception {
-        contactsSteps.openContactsPage();
-    }
 
     @When("^I enter user '(.*)' with password '(.*)'")
     public void login(String username, String password) throws Exception {
@@ -35,7 +31,13 @@ public class LoginFeature {
 
     @Then("^The user should see a failed login warning message$")
     public void failedLoginWarnMessageIsShown() {
-        return;
+        loginSteps.failedLoginWarnMessageIsShown();
+    }
+
+
+    @Given("^I am logged in$")
+    public void loginAdminUser() {
+        loginSteps.login("admin", "admin");
     }
 
 }
