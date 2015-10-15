@@ -16,13 +16,18 @@ public class LoginSteps extends ScenarioSteps {
     private LoginPage loginPage;
 
     @Step
-    public void login() {
-        loginPage.login("admin", "admin");
+    public void login(String username, String password) {
+        loginPage.login(username, password);
+    }
+
+    @Step
+    public void navigateLoginPage() {
+        loginPage.open();
     }
 
     @Step
     public void isLoginPage() {
-        System.out.println("Page title " + loginPage.getTitle());
-        assertThat(loginPage.getTitle().startsWith("Logiaan"));
+        assertThat(loginPage.getTitle()).startsWith("Login");
     }
+
 }

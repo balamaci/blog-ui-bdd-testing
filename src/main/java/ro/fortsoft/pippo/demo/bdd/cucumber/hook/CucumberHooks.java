@@ -21,7 +21,15 @@ public class CucumberHooks {
         System.out.println("Opening browser....");
 //        Serenity.useFirefoxProfile(customFirefoxProfile());
         pages.getConfiguration().getEnvironmentVariables()
-                .setProperty(ThucydidesSystemProperty.WEBDRIVER_BASE_URL.getPropertyName(), "http://localhost:8338");
+                .setProperty(ThucydidesSystemProperty.WEBDRIVER_BASE_URL.getPropertyName(),
+                        "http://tomcat:8080/pippo/");
+/*
+        pages.getConfiguration().getEnvironmentVariables()
+                .setProperty(ThucydidesSystemProperty.WEBDRIVER_REMOTE_URL.getPropertyName(),
+                        "http://tomcat:8080/pippo");
+*/
+
+
         pages.getDriver().manage().deleteAllCookies();
         pages.getDriver().manage().window().maximize();
     }

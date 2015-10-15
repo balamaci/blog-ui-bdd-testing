@@ -1,8 +1,18 @@
 @ui
-Feature: Login
-  As an admin user I can login
+Feature: Login functionality
+  Unauthorized users first need to login into the application
 
-  Scenario: User is shown Login page
-    When I open the application
-    Then I should see the Login page
+  Users who enter right credentials should be able to login into the application.
+  Sometimes users ,
 
+  Background:
+    Given I try to access the 'Contacts' page
+    And I see the 'Login' page
+
+  Scenario: Entering valid credentials I am able to login and see 'Contacts' page
+    When I enter user 'admin' with password 'admin'
+    Then I should see the 'Contacts' page
+
+  Scenario: Entering invalid credentials I am warned that login has failed
+    When I enter user 'hacker' with password 'admin'
+    Then The user should see a failed login warning message
