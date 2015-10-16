@@ -21,7 +21,7 @@ public class LoginSteps extends ScenarioSteps {
     }
 
     @Step
-    public void navigateLoginPage() {
+    public void openLoginPage() {
         loginPage.open();
     }
 

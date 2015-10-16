@@ -14,4 +14,4 @@ Feature: Login functionality
 
   Scenario: Entering invalid credentials I am warned that login has failed
     When I enter user 'hacker' with password ''
-    Then The user should see a failed login warning message
+    Then I should see a failed login warning message

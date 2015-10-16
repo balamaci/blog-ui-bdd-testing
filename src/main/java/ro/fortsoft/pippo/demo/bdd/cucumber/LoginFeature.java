@@ -29,7 +29,7 @@ public class LoginFeature {
         loginSteps.isLoginPage();
     }
 
-    @Then("^The user should see a failed login warning message$")
+    @Then("^I should see a failed login warning message$")
     public void failedLoginWarnMessageIsShown() {
         loginSteps.failedLoginWarnMessageIsShown();
     }
@@ -37,6 +37,7 @@ public class LoginFeature {
 
     @Given("^I am logged in$")
     public void loginAdminUser() {
+        loginSteps.openLoginPage();
         loginSteps.login("admin", "admin");
     }
 

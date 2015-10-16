@@ -22,7 +22,15 @@ public class ContactsSteps extends ScenarioSteps {
         assertThat(getDriver().getTitle()).startsWith("Contacts");
     }
 
-    public void addContact() {
+    public void clickOnAdd() {
+        contactsPage.clickOnAddContactLink();
+    }
+
+    public void addContact(String name, String phone, String address) {
+        contactsPage.addContact(name, phone, address);
+    }
+
+    public void isContactWithNamePresentInList(String name) {
 
     }
 
