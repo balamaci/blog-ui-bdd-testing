@@ -14,7 +14,8 @@ Feature: Create Contacts functionality
   Scenario Outline: I can add a new contact
     When I click on 'Add'
     And I enter '<name>' '<phone>' and '<address>' in the Edit panel
-    Then I should see '<name>' in the Contacts list
+    And I click 'Submit' button
+    Then I should see '<name>' in the list of contacts
 
       Examples:
         | name          | address                  | phone        |

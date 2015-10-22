@@ -1,8 +1,8 @@
 @ui
 Feature: Login functionality
-  Unauthorized users first need to login into the application
-  Users who enter right credentials should be able to login into the application
-  Users who enter wrong credentials are shown an error message
+  Unauthorized users first need to login into the application.
+  Users who enter right credentials should be able to login into the application.
+  Users who enter wrong credentials are shown an error message.
 
   Background:
     Given I try to access the 'Contacts' page

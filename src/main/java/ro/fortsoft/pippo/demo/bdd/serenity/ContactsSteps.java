@@ -26,12 +26,16 @@ public class ContactsSteps extends ScenarioSteps {
         contactsPage.clickOnAddContactLink();
     }
 
-    public void addContact(String name, String phone, String address) {
-        contactsPage.addContact(name, phone, address);
+    public void fillContactInfo(String name, String phone, String address) {
+        contactsPage.fillContactInfo(name, phone, address);
+    }
+
+    public void clickOnSubmit() {
+        contactsPage.clickSubmit();
     }
 
     public void isContactWithNamePresentInList(String name) {
-
+        assertThat(contactsPage.getContactsTableSource()).contains(name);
     }
 
 }

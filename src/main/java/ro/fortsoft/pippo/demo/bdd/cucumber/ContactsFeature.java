@@ -25,17 +25,23 @@ public class ContactsFeature extends ScenarioSteps {
         contactsSteps.clickOnAdd();
     }
 
-    @Then("^I should see the 'Contacts' page$")
+    @Then("^I click 'Submit' button$")
+    public void clickSubmit() throws Exception {
+        contactsSteps.clickOnSubmit();
+    }
+
+    @When("^I enter '(.*)' '(.*)' and '(.*)' in the Edit panel$")
+    public void fillContactInfo(String name, String phone, String address) throws Exception {
+        contactsSteps.fillContactInfo(name, phone, address);
+    }
+
+    @When("^I should see the 'Contacts' page$")
     public void isContactsPage() throws Exception {
         contactsSteps.isContactsPage();
     }
 
-    @When("^I enter '(.*)' '(.*)' and '(.*)' in the Edit panel$")
-    public void addContact(String name, String phone, String address) throws Exception {
-        contactsSteps.addContact(name, phone, address);
-    }
 
-    @Then("^I should see '(.*)' in the Contacts list")
+    @Then("^I should see '(.*)' in the list of contacts")
     public void contactNameIsPresentInContactsPanel(String name) throws Exception {
         contactsSteps.isContactWithNamePresentInList(name);
     }
