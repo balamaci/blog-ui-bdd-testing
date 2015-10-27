@@ -15,7 +15,6 @@ public class LoginFeature {
 
     @Steps
     private LoginSteps loginSteps;
-    @Steps
     private ContactsSteps contactsSteps;
 
 

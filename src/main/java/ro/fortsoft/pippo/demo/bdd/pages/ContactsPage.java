@@ -25,7 +25,6 @@ public class ContactsPage extends PageObject {
         typeInto(txtName, name);
         typeInto(txtPhone, phone);
         typeInto(txtAddress, address);
-
     }
 
     public void clickSubmit() {
