@@ -9,7 +9,7 @@ import ro.fortsoft.pippo.demo.bdd.serenity.ContactsSteps;
 /**
  * @author sbalamaci
  */
-public class ContactsFeature {
+public class ContactsStepDefs {
 
     @Steps
     private ContactsSteps contactsSteps;
@@ -40,7 +40,7 @@ public class ContactsFeature {
     }
 
 
-    @Then("^I should see '(.*)' in the list of contacts")
+    @Then("^I should see '(.*)' in the list of contacts$")
     public void contactNameIsPresentInContactsPanel(String name) throws Exception {
         contactsSteps.isContactWithNamePresentInList(name);
     }

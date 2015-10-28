@@ -11,14 +11,14 @@ import ro.fortsoft.pippo.demo.bdd.serenity.LoginSteps;
 /**
  * @author sbalamaci
  */
-public class LoginFeature {
+public class LoginStepDefs {
 
     @Steps
     private LoginSteps loginSteps;
     private ContactsSteps contactsSteps;
 
 
-    @When("^I enter user '(.*)' with password '(.*)'")
+    @When("^I enter user '(.*)' with password '(.*)'$")
     public void login(String username, String password) throws Exception {
         loginSteps.login(username, password);
     }
