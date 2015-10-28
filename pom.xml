@@ -15,7 +15,6 @@
 		<webapp.deploy.context>pippo</webapp.deploy.context>
 		<war.file.location>pippo-demo.war</war.file.location>
 
-		<junit.version>4.11</junit.version>
 		<slf4j.version>1.7.7</slf4j.version>
 		<typesafe.config>1.3.0</typesafe.config>
 		<serenity.core.version>1.1.14</serenity.core.version>
@@ -41,25 +40,7 @@
 		</dependency>
 
 
-		<dependency>
-			<groupId>com.github.detro</groupId>
-			<artifactId>phantomjsdriver</artifactId>
-			<version>${phantomjsdriver.version}</version>
-		</dependency>
-
-		<!--  JUNIT DEPENDENCY FOR TESTING -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>${assertj-core.version}</version>
-		</dependency>
-
+		<!--  SERENITY -->
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
 			<artifactId>serenity-core</artifactId>
@@ -72,6 +53,11 @@
 			<version>${serenity.cucumber.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>${assertj-core.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
