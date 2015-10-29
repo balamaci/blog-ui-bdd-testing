@@ -1,6 +1,5 @@
 package ro.fortsoft.pippo.demo.bdd.cucumber;
 
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -19,23 +18,23 @@ public class LoginStepDefs {
 
 
     @When("^I enter user '(.*)' with password '(.*)'$")
-    public void login(String username, String password) throws Exception {
+    public void login_user(String username, String password) throws Exception {
         loginSteps.login(username, password);
     }
 
-    @And("^I see the 'Login' page$")
-    public void loginPageIsShown() throws Exception {
+    @Then("^I see the 'Login' page$")
+    public void login_page_is_shown() throws Exception {
         loginSteps.isLoginPage();
     }
 
     @Then("^I should see a failed login warning message$")
-    public void failedLoginWarnMessageIsShown() {
+    public void failed_login_warn_message_is_shown() {
         loginSteps.failedLoginWarnMessageIsShown();
     }
 
 
     @Given("^I am logged in$")
-    public void loginAdminUser() {
+    public void login_admin_user() {
         loginSteps.openLoginPage();
         loginSteps.login("admin", "admin");
     }
