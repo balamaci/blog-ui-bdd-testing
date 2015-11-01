@@ -1,7 +1,6 @@
 package ro.fortsoft.pippo.demo.bdd.serenity;
 
 import net.thucydides.core.steps.ScenarioSteps;
-import org.fluentlenium.core.annotation.Page;
 import ro.fortsoft.pippo.demo.bdd.pages.ContactsPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -11,7 +10,6 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class ContactsSteps extends ScenarioSteps {
 
-    @Page
     private ContactsPage contactsPage;
 
     public void openContactsPage() {

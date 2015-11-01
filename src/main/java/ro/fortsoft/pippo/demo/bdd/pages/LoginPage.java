@@ -12,13 +12,15 @@ import ro.fortsoft.pippo.demo.bdd.config.Locators;
 @DefaultUrl("http://localhost/login")
 public class LoginPage extends PageObject {
 
-    public void login(String username, String password) {
+    public void enterUsernameAndPassword(String username, String password) {
         WebElement txtUsername = find(By.name(Locators.getValue("login.txtUsername.name")));
         WebElement txtPassword = find(By.name(Locators.getValue("login.txtPassword.name")));
 
         typeInto(txtUsername, username);
         typeInto(txtPassword, password);
+    }
 
+    public void clickSubmit() {
         WebElement btnSubmit = find(By.name(Locators.getValue("login.btnSubmit.name")));
         clickOn(btnSubmit);
     }

@@ -2,7 +2,7 @@
 Feature: Create Contacts functionality
 
   Background:
-    Given I am logged in
+    Given I am logged in as admin
     And I open the 'Contacts' page
 
   Scenario: I am warned when trying to create a new contact with a short phone number

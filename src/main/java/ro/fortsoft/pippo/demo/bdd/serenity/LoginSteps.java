@@ -2,7 +2,7 @@ package ro.fortsoft.pippo.demo.bdd.serenity;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import org.fluentlenium.core.annotation.Page;
+import ro.fortsoft.pippo.demo.bdd.config.Messages;
 import ro.fortsoft.pippo.demo.bdd.pages.LoginPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -12,12 +12,12 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class LoginSteps extends ScenarioSteps {
 
-    @Page
     private LoginPage loginPage;
 
     @Step
-    public void login(String username, String password) {
-        loginPage.login(username, password);
+    public void submitUsernameAndPassword(String username, String password) {
+        loginPage.enterUsernameAndPassword(username, password);
+        loginPage.clickSubmit();
     }
 
     @Step
@@ -31,10 +31,8 @@ public class LoginSteps extends ScenarioSteps {
     }
 
     @Step
-    public void failedLoginWarnMessageIsShown() {
-        assertThat(loginPage.getDriver().getPageSource()).contains("Authentication failed");
+    public void warnMessageWithKeyIsShown(String key) {
+        assertThat(loginPage.getDriver().getPageSource()).contains(Messages.getValue(key));
     }
-
-
 
 }

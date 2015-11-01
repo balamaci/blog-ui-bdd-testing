@@ -34,7 +34,7 @@ public class ContactsStepDefs {
         contactsSteps.fillContactInfo(name, phone, address);
     }
 
-    @When("^I should see the 'Contacts' page$")
+    @Then("^I should see the 'Contacts' page$")
     public void is_contacts_page() throws Exception {
         contactsSteps.isContactsPage();
     }

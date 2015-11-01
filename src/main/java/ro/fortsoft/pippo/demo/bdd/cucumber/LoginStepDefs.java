@@ -19,7 +19,7 @@ public class LoginStepDefs {
 
     @When("^I enter user '(.*)' with password '(.*)'$")
     public void login_user(String username, String password) throws Exception {
-        loginSteps.login(username, password);
+        loginSteps.submitUsernameAndPassword(username, password);
     }
 
     @Then("^I see the 'Login' page$")
@@ -29,14 +29,14 @@ public class LoginStepDefs {
 
     @Then("^I should see a failed login warning message$")
     public void failed_login_warn_message_is_shown() {
-        loginSteps.failedLoginWarnMessageIsShown();
+        loginSteps.warnMessageWithKeyIsShown("login.warnLoginFailed");
     }
 
 
-    @Given("^I am logged in$")
+    @Given("^I am logged in as admin$")
     public void login_admin_user() {
         loginSteps.openLoginPage();
-        loginSteps.login("admin", "admin");
+        loginSteps.submitUsernameAndPassword("admin", "admin");
     }
 
 }
