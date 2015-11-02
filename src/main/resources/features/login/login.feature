@@ -9,9 +9,9 @@ Feature: Login functionality
     And I see the 'Login' page
 
   Scenario: Entering valid credentials I am able to login and see 'Contacts' page
-    When I enter user 'admin' with password 'admin'
+    When I login with user 'admin' and with password 'admin'
     Then I should see the 'Contacts' page
 
   Scenario: Entering invalid credentials I am warned that login has failed
-    When I enter user 'hacker' with password ''
+    When I login with user 'hacker' and with password ''
     Then I should see a failed login warning message

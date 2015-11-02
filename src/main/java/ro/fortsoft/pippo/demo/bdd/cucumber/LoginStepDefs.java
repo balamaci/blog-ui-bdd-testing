@@ -17,13 +17,14 @@ public class LoginStepDefs {
     private ContactsSteps contactsSteps;
 
 
-    @When("^I enter user '(.*)' with password '(.*)'$")
-    public void login_user(String username, String password) throws Exception {
-        loginSteps.submitUsernameAndPassword(username, password);
+    @When("^I login with user '(.*)' and with password '(.*)'$")
+    public void login_user(String username, String password) {
+        loginSteps.enterUsernameAndPassword(username, password);
+        loginSteps.clickOnSubmit();
     }
 
     @Then("^I see the 'Login' page$")
-    public void login_page_is_shown() throws Exception {
+    public void login_page_is_shown() {
         loginSteps.isLoginPage();
     }
 
@@ -36,7 +37,8 @@ public class LoginStepDefs {
     @Given("^I am logged in as admin$")
     public void login_admin_user() {
         loginSteps.openLoginPage();
-        loginSteps.submitUsernameAndPassword("admin", "admin");
+        loginSteps.enterUsernameAndPassword("admin", "admin");
+        loginSteps.clickOnSubmit();
     }
 
 }

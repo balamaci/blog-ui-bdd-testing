@@ -15,9 +15,13 @@ public class LoginSteps extends ScenarioSteps {
     private LoginPage loginPage;
 
     @Step
-    public void submitUsernameAndPassword(String username, String password) {
+    public void enterUsernameAndPassword(String username, String password) {
         loginPage.enterUsernameAndPassword(username, password);
-        loginPage.clickSubmit();
+    }
+
+    @Step
+    public void clickOnSubmit() {
+        loginPage.clickOnSubmit();
     }
 
     @Step

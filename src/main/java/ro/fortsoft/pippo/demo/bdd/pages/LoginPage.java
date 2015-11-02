@@ -20,7 +20,7 @@ public class LoginPage extends PageObject {
         typeInto(txtPassword, password);
     }
 
-    public void clickSubmit() {
+    public void clickOnSubmit() {
         WebElement btnSubmit = find(By.name(Locators.getValue("login.btnSubmit.name")));
         clickOn(btnSubmit);
     }
