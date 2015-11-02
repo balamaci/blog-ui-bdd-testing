@@ -3,7 +3,6 @@ package ro.fortsoft.pippo.demo.bdd.cucumber.hook;
 import cucumber.api.java.Before;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.pages.Pages;
-import org.openqa.selenium.WebDriver;
 
 /**
  * @author sbalamaci
@@ -12,9 +11,7 @@ public class CucumberHooks {
 
     @ManagedPages
     private Pages pages;
-
-    private WebDriver webDriver;
-
+    
     @Before
     public void openBrowser() {
 //        Serenity.useFirefoxProfile(customFirefoxProfile());
