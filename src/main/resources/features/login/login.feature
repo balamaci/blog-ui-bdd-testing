@@ -14,4 +14,4 @@ Feature: Login functionality
 
   Scenario: Entering invalid credentials I am warned that login has failed
     When I login with user 'hacker' and with password ''
-    Then I should see a failed login warning message
+    Then I should see a failed login warning message with key 'login.warnLoginFailed'

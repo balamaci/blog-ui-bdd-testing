@@ -28,9 +28,9 @@ public class LoginStepDefs {
         loginSteps.isLoginPage();
     }
 
-    @Then("^I should see a failed login warning message$")
-    public void failed_login_warn_message_is_shown() {
-        loginSteps.warnMessageWithKeyIsShown("login.warnLoginFailed");
+    @Then("^I should see a failed login warning message with key '(.*)'$")
+    public void failed_login_warn_message_is_shown(String key) {
+        loginSteps.warnMessageWithKeyIsShown(key);
     }
 
 

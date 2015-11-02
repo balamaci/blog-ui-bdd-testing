@@ -15,33 +15,33 @@ public class ContactsStepDefs {
     private ContactsSteps contactsSteps;
 
     @Given("^(?:I try to access|I open) the 'Contacts' page$")
-    public void navigate_contacts_page() throws Exception {
+    public void navigate_contacts_page() {
         contactsSteps.openContactsPage();
     }
 
     @When("^I click on 'Add'$")
-    public void click_on_add() throws Exception {
+    public void click_on_add() {
         contactsSteps.clickOnAdd();
     }
 
     @Then("^I click 'Submit' button$")
-    public void click_submit() throws Exception {
+    public void click_submit() {
         contactsSteps.clickOnSubmit();
     }
 
     @When("^I enter '(.*)' '(.*)' and '(.*)' in the Edit panel$")
-    public void fill_contact_info(String name, String phone, String address) throws Exception {
+    public void fill_contact_info(String name, String phone, String address) {
         contactsSteps.fillContactInfo(name, phone, address);
     }
 
     @Then("^I should see the 'Contacts' page$")
-    public void is_contacts_page() throws Exception {
+    public void is_contacts_page() {
         contactsSteps.isContactsPage();
     }
 
 
     @Then("^I should see '(.*)' in the list of contacts$")
-    public void contact_name_is_present_in_contacts_table(String name) throws Exception {
+    public void contact_name_is_present_in_contacts_table(String name) {
         contactsSteps.isContactWithNamePresentInList(name);
     }
 

@@ -23,7 +23,6 @@ public class CucumberHooks {
                 .setProperty(ThucydidesSystemProperty.WEBDRIVER_BASE_URL.getPropertyName(),
                         "http://tomcat:8080/pippo/");
 */
-
         pages.getDriver().manage().deleteAllCookies();
         pages.getDriver().manage().window().maximize();
     }
