@@ -24,6 +24,6 @@ which basically does **docker-compose run uitests mvn clean verify**
 this would execute the tests and produce the Serenity reports which can be accessed at **./target/site/index.html**
 
 
-[![BDD preview](/content/images/2015/10/bdd_preview.png)](http://balamaci.ro/static/serenity/index.html)
+[![BDD preview](http://balamaci.ro/content/images/2015/10/bdd_preview.png)](http://balamaci.ro/static/serenity/index.html)
 
 We included **pippo-demo.war** -the application we run our tests against- on the repo to have a single command to run the job. Normally you'd have it provided by another build job that would trigger the testing job. 
