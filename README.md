@@ -1,5 +1,5 @@
 # blog-ui-bdd-testing
-BDD testing of pippo demo with [Cucumber](https://cucumber.io/docs/reference/jvm#java) and [Serenity](http://thucydides.info/docs/serenity-staging/)
+BDD testing of [pippo](https://github.com/decebals/pippo) [demo angular-crud-app]() with [Cucumber](https://cucumber.io/docs/reference/jvm#java) and [Serenity](http://thucydides.info/docs/serenity-staging/)
 
 Sources for the blog posts [Using docker for orchestrating a reusable BDD web testing setup with Selenium grid - Part I](http://balamaci.ro/using-docker-and-docker-compose-for-orchestrating-a-full-bdd/)
 and [BDD web testing setup - Docker, Cucumber and Serenity - Part II](http://balamaci.ro/orchestrating-a-reusable-bdd-web-testing-setup-part-ii/)
@@ -8,21 +8,19 @@ and [BDD web testing setup - Docker, Cucumber and Serenity - Part II](http://bal
 1. Install Docker and [Docker-compose](http://docs.docker.com/compose/install/) 
 2. Clone this repository
 ````bash
-git clone git@github.com:balamaci/blog-ui-bdd-testing.git
+$ git clone git@github.com:balamaci/blog-ui-bdd-testing.git
 ````
-3. Create the docker images
+3. Create the docker images locally
 There is a one time run of 
 ````bash
-./build-images.sh
+$ ./docker-images-build.sh
 ```` 
-which will create the docker images. Normally you'd have them pushed to a repository, but since I've based my images on **oracle-jdk** 
-there might be some legal issues with embedding it inside the image. So instead we use the script to build locally the required images.
+which will create the docker images locally. Normally you'd have them pushed to a repository, but I wanted to show there are no "hidden tricks", or you can use them as example to build your own. So instead we use the script to build locally the required images.
 
 ## Code run
-
 To run the bdd tests anytime just do
 ````bash
-./restart.sh
+$ ./restart.sh
 ````
 
 which basically does **docker-compose run uitests mvn clean verify**
