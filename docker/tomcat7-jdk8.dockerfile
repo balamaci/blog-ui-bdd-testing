@@ -1,4 +1,4 @@
-FROM        balamaci/oracle-jdk8
+FROM        maven:3.3.3-jdk-8
 ENV TOMCAT_VERSION 7.0.63
 
 VOLUME      ["/var/log/tomcat7"]
